@@ -48,7 +48,7 @@ function App() {
           </IonToolbar>
         </IonHeader>
         <IonContent fullscreen>
-          <h1>Live Debug</h1>
+          <h1>React-vite ionic-capacitor Native web application starter</h1>
           <IonButton
             onClick={() =>
               presentAlert({
