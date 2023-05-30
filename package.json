@@ -1,0 +1,38 @@
+{
+  "name": "cold-connect-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port=3000",
+    "build": "vite build",
+    "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "ionic:build": "npm run build && npx cap copy",
+    "ionic:serve": "npm run build && npx cap copy && npx cap open android"
+  },
+  "dependencies": {
+    "@capacitor/android": "^5.0.4",
+    "@capacitor/app": "^5.0.2",
+    "@capacitor/cli": "^5.0.4",
+    "@capacitor/core": "^5.0.4",
+    "@capacitor/haptics": "^5.0.2",
+    "@capacitor/ios": "^5.0.4",
+    "@capacitor/keyboard": "^5.0.2",
+    "@capacitor/status-bar": "^5.0.2",
+    "@ionic/react": "^6.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.6.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.37",
+    "@types/react-dom": "^18.0.11",
+    "@vitejs/plugin-react": "^4.0.0",
+    "eslint": "^8.38.0",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.3.4",
+    "vite": "^4.3.9"
+  }
+}
