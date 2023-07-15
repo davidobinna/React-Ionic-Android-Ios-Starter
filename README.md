@@ -145,3 +145,84 @@ You need to ensure that you have Node.js and npm installed in your development e
 
 Remember to run `npx cap sync` after installing new plugins. This command updates each of your native platform projects so they have the latest assets and configuration data. This way, when you run `npx cap open android` or `npx cap open ios`, your IDE will be up-to-date.
 
+<h1>Installation With Typescript</h1>
+1. install vite globally
+ npm install -g create-vite
+ 
+2. Create new project vite
+create-vite my-app --template react-ts
+
+3. Navigate to the project directory:
+   cd my-app
+
+4. Configure your project's dependencies. Open a terminal at the project root and install the required dependencies:
+   npm install
+
+5. Open src/App.tsx and update it with the following code:
+   import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import OnboardScreenLayout from './screens/OnboardScreenLayout';
+import OnboardScreen from './screens/OnboardScreen';
+
+const App = () => {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<OnboardScreenLayout />}>
+          <Route path="/" element={<Navigate to="/onboardscreen" />} />
+          <Route path="/onboardscreen" element={<OnboardScreen />} />
+        </Route>
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
+
+OR
+
+In your routing configuration file (e.g., src/router.tsx), define the routes using React Router:
+
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import OnboardScreenLayout from './components/OnboardScreenLayout';
+import OnboardScreen from './components/OnboardScreen';
+import NotFound from './components/NotFound';
+
+const RouterConfig = () => (
+  <Router>
+    <Routes>
+      <Route path="/" element={<OnboardScreenLayout />}>
+        <Route index element={<Navigate to="/onboardscreen" />} />
+        <Route path="/onboardscreen" element={<OnboardScreen />} />
+      </Route>
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+  </Router>
+);
+
+export default RouterConfig;
+
+
+6. Finally, you can import and use this RouterConfig component in your App.tsx or index.tsx file:
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import RouterConfig from './router';
+
+ReactDOM.render(<RouterConfig />, document.getElementById('root'));
+
+
+7. Using Context provider
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { AppProvider } from './AppContext';
+import RouterConfig from './router';
+
+ReactDOM.render(
+  <AppProvider>
+    <RouterConfig />
+  </AppProvider>,
+  document.getElementById('root')
+);
+
