@@ -1,5 +1,4 @@
-<h1>Welcome! I'm Dave - Full Stack Developer</h1>
-I have created this Navtive web app template for developers who are lazy to start a new app development with ReactNative, the good news is ReactVite + Capacitor + Ionic will give a faster routing response, faster module container, Google maps, Geolocations, Camera, keyboard, status-bar, haptics, and all android/iOS features. You can always check the CapacitorJs documentation and Ionic UI/UX documentation. remember to reach out to me for more guideline to completely set up your app project for production in a more advance and professional way.
+<h1>Welcome! I'm Dave - welcom</h1>
 
 # React-Ios-Android-Native-Xcode-AndroidStudio-Starter-Webapp
 React Ios and Android Native web application stater template for quick development and optimized with ionic themes: Run npm install, npm run dev, npm run ionic:buiild and npm run ionic:serve make sure sure to have android studio, xcode and nodejs on your computer.
